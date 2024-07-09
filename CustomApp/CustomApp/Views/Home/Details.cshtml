@@ -1,0 +1,10 @@
+﻿@model CustomApp.Models.Product
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<h2>@Model.Name</h2>
+<img src="@Model.ImageUrl" alt="@Model.Name" style="width: 300px; height: auto;" />
+<p>@Model.DetailedDescription</p>
+<p>Цена: @Model.Price руб.</p>

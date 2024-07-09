@@ -1,0 +1,129 @@
+/* Общие стили */
+body {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Красочный градиентный фон */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для шапки сайта */
+.header {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+    .header h1 {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    .header .contact-info {
+        font-size: 1rem;
+    }
+
+        .header .contact-info a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+
+            .header .contact-info a:hover {
+                text-decoration: underline;
+            }
+
+/* Стили для текста и контейнеров */
+.text-center {
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Градиент для текста */
+    color: white;
+    padding: 40px 0;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон для контейнера */
+    padding: 40px;
+    border-radius: 15px;
+}
+
+/* Стили для карточек продуктов */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background: linear-gradient(to bottom, #fff1eb, #ace0f9); /* Градиент для карточек */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+    .card img {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        object-fit: cover;
+        height: 200px; /* Высота изображения */
+    }
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: auto; /* Отодвигает описание вниз */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+/* Стили для модального окна */
+.modal-content {
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.modal-header {
+    border-bottom: none;
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+    .modal-body img {
+        max-width: 100%;
+        border-radius: 15px;
+    }
+
+    .modal-body p {
+        font-size: 1.2rem;
+    }

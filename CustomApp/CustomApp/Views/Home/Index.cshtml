@@ -1,0 +1,77 @@
+﻿@model IEnumerable<CustomApp.Models.Product>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="header">
+    <h1>CustomApp</h1>
+    <div class="contact-info">
+        Свяжитесь с нами: <a href="mailto:contact@customapp.com">contact@customapp.com</a>
+    </div>
+</div>
+
+<div class="text-center">
+    <h1 class="display-4">Футболки с принтом, одежда и подарки на заказ</h1>
+    <p>Печать на футболках, толстовках и другой одежде, сувенирах своего дизайна от 1 штуки с быстрой доставкой по всему миру</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Name</h5>
+                        <p class="card-text">@product.Description</p>
+                        <p class="card-text">@product.Price руб.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productModal"
+                                data-name="@product.Name" data-description="@product.DetailedDescription"
+                                data-price="@product.Price" data-image="@product.ImageUrl">
+                            Посмотреть
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="productModalLabel">Детали продукта</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Product Image" class="img-fluid">
+                <p id="modalDescription"></p>
+                <p><strong>Цена:</strong> <span id="modalPrice"></span> руб.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $('#productModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var name = button.data('name');
+            var description = button.data('description');
+            var price = button.data('price');
+            var image = button.data('image');
+
+            var modal = $(this);
+            modal.find('.modal-title').text(name);
+            modal.find('#modalImage').attr('src', image);
+            modal.find('#modalDescription').text(description);
+            modal.find('#modalPrice').text(price);
+        });
+    </script>
+}
