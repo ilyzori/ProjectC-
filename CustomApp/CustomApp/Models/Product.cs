@@ -11,5 +11,6 @@ namespace CustomApp.Models
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
         public string DetailedDescription { get; set; }
+        public string Category { get; set; }
     }
 }

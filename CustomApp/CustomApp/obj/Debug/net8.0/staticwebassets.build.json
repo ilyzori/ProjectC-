@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KTb+QbIi61p5/bukYgg1+iz8eXlWWmtv0HB6B5B5kJs=",
+  "Hash": "CQfQuJpv/2i+howlY4sCvtB5o8A3RX3xYHKGO8wlenU=",
   "Source": "CustomApp",
   "BasePath": "_content/CustomApp",
   "Mode": "Default",
@@ -93,6 +93,25 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "D:\\CustomApp\\CustomApp\\CustomApp\\wwwroot\\images\\1683582233_happylove-top-p-suveniri-rossii-krasivo-1.png",
+      "SourceId": "CustomApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CustomApp\\CustomApp\\CustomApp\\wwwroot\\",
+      "BasePath": "_content/CustomApp",
+      "RelativePath": "images/1683582233_happylove-top-p-suveniri-rossii-krasivo-1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\1683582233_happylove-top-p-suveniri-rossii-krasivo-1.png"
+    },
+    {
       "Identity": "D:\\CustomApp\\CustomApp\\CustomApp\\wwwroot\\images\\1956.750x0.png",
       "SourceId": "CustomApp",
       "SourceType": "Discovered",
@@ -112,6 +131,25 @@
       "OriginalItemSpec": "wwwroot\\images\\1956.750x0.png"
     },
     {
+      "Identity": "D:\\CustomApp\\CustomApp\\CustomApp\\wwwroot\\images\\6135216714.jpg",
+      "SourceId": "CustomApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CustomApp\\CustomApp\\CustomApp\\wwwroot\\",
+      "BasePath": "_content/CustomApp",
+      "RelativePath": "images/6135216714.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\6135216714.jpg"
+    },
+    {
       "Identity": "D:\\CustomApp\\CustomApp\\CustomApp\\wwwroot\\images\\BP_wu620004_3_tif_1000x1000.jpg",
       "SourceId": "CustomApp",
       "SourceType": "Discovered",
@@ -129,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\BP_wu620004_3_tif_1000x1000.jpg"
+    },
+    {
+      "Identity": "D:\\CustomApp\\CustomApp\\CustomApp\\wwwroot\\images\\e6469cec9abd3723b3092f798409e65e688a651d_original.jpeg",
+      "SourceId": "CustomApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CustomApp\\CustomApp\\CustomApp\\wwwroot\\",
+      "BasePath": "_content/CustomApp",
+      "RelativePath": "images/e6469cec9abd3723b3092f798409e65e688a651d_original.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\e6469cec9abd3723b3092f798409e65e688a651d_original.jpeg"
     },
     {
       "Identity": "D:\\CustomApp\\CustomApp\\CustomApp\\wwwroot\\images\\felpa-nera-semplice.jpg",

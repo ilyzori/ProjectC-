@@ -6,10 +6,31 @@
 
 <div class="header">
     <h1>CustomApp</h1>
+    
     <div class="contact-info">
         Свяжитесь с нами: <a href="mailto:contact@customapp.com">contact@customapp.com</a>
     </div>
 </div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">CustomApp</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("About", "Home")">О нас</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Contact", "Home")">Контакты</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 <div class="text-center">
     <h1 class="display-4">Футболки с принтом, одежда и подарки на заказ</h1>
@@ -17,25 +38,40 @@
 </div>
 
 <div class="container">
-    <div class="row">
-        @foreach (var product in Model)
-        {
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name">
-                    <div class="card-body">
-                        <h5 class="card-title">@product.Name</h5>
-                        <p class="card-text">@product.Description</p>
-                        <p class="card-text">@product.Price руб.</p>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productModal"
-                                data-name="@product.Name" data-description="@product.DetailedDescription"
-                                data-price="@product.Price" data-image="@product.ImageUrl">
-                            Посмотреть
-                        </button>
-                    </div>
-                </div>
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <h5>Фильтры</h5>
+            <div class="list-group">
+                <a href="@Url.Action("Index", new { category = "Все" })" class="list-group-item list-group-item-action category-filter" data-category="Все">Все</a>
+                <a href="@Url.Action("Index", new { category = "Футболки" })" class="list-group-item list-group-item-action category-filter" data-category="Футболки">Футболки</a>
+                <a href="@Url.Action("Index", new { category = "Толстовки" })" class="list-group-item list-group-item-action category-filter" data-category="Толстовки">Толстовки</a>
+                <a href="@Url.Action("Index", new { category = "Сувениры" })" class="list-group-item list-group-item-action category-filter" data-category="Сувениры">Сувениры</a>
             </div>
-        }
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                @foreach (var product in Model)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name">
+                            <div class="card-body">
+                                <h5 class="card-title">@product.Name</h5>
+                                <p class="card-text">@product.Description</p>
+                                <p class="card-text">@product.Price руб.</p>
+                                
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productModal"
+                                        data-name="@product.Name" data-description="@product.DetailedDescription"
+                                        data-price="@product.Price" data-image="@product.ImageUrl">
+                                    Посмотреть
+                                </button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
     </div>
 </div>
 
@@ -72,6 +108,26 @@
             modal.find('#modalImage').attr('src', image);
             modal.find('#modalDescription').text(description);
             modal.find('#modalPrice').text(price);
+        });
+
+        // Обработка кликов по категориям
+        document.querySelectorAll('.category-filter').forEach(function (categoryItem) {
+            categoryItem.addEventListener('click', function (event) {
+                event.preventDefault();
+                var category = this.getAttribute('data-category');
+                var form = document.createElement('form');
+                form.method = 'get';
+                form.action = '@Url.Action("Index", "Home")';
+
+                var categoryInput = document.createElement('input');
+                categoryInput.type = 'hidden';
+                categoryInput.name = 'category';
+                categoryInput.value = category;
+                form.appendChild(categoryInput);
+
+                document.body.appendChild(form);
+                form.submit();
+            });
         });
     </script>
 }
