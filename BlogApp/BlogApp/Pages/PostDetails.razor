@@ -1,0 +1,20 @@
+﻿@page "/postdetails/{id:int}"
+@inherits PostDetailsBase
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-5">
+    <MudPaper Elevation="4" Class="pa-4">
+        @if (post == null)
+        {
+            <MudText Typo="Typo.body1">Загрузка...</MudText>
+        }
+        else
+        {
+            <MudText Typo="Typo.h4">@post.Title</MudText>
+            <MudDivider Class="my-4" />
+            <MudText Typo="Typo.body1">@post.Content</MudText>
+            <MudText Typo="Typo.caption">@post.Created.ToString("dd/MM/yyyy")</MudText>
+            <MudDivider Class="my-4" />
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/">Назад</MudButton>
+        }
+    </MudPaper>
+</MudContainer>

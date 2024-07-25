@@ -1,0 +1,14 @@
+﻿@page "/editpost/{id:int}"
+@inherits ComponentBase
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-5">
+    <MudPaper Elevation="4" Class="pa-4">
+        <MudText Typo="Typo.h4" Align="Align.Center">Редактирование поста</MudText>
+        <MudForm @ref="form">
+            <MudTextField @bind-Value="post.Title" Label="Заголовок" Required="true" />
+            <MudTextField @bind-Value="post.Content" Label="Содержание" Required="true" Multiline="true" />
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="HandleValidSubmit">Сохранить</MudButton>
+            <MudButton Variant="Variant.Text" Color="Color.Secondary" OnClick="CancelEdit">Отмена</MudButton>
+        </MudForm>
+    </MudPaper>
+</MudContainer>

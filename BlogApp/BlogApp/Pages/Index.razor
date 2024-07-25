@@ -1,0 +1,60 @@
+﻿@page "/"
+@inherits IndexBase
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-5">
+    <MudPaper Elevation="4" Class="pa-4 blog-container">
+        <MudText Typo="Typo.h2" Align="Align.Center" Style=" font-size: 3rem;font-weight: bold; color: #fff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); " Color="Color.Primary">Блог</MudText>
+        <MudDivider Class="my-4" />
+        <div class="text-right mb-2">
+            <MudButton Variant="Variant.Filled" Color="Color.Success" OnClick="@(() => NavigationManager.NavigateTo("/createpost"))" Style="background-color: #28a745; color: white; padding: 0.5rem 1rem; border-radius: 4px;">Создать пост</MudButton>
+        </div>
+        @if (posts == null)
+        {
+            <MudText Typo="Typo.body1">Загрузка...</MudText>
+        }
+        else if (!posts.Any())
+        {
+            <MudText Typo="Typo.body1">Нет постов</MudText>
+        }
+        else
+        {
+            <MudGrid Style="post-grid" Spacing="3">
+                @foreach (var post in posts)
+                {
+                    var postDetailsUrl = $"postdetails/{post.Id}";
+                    var randomColor = $"#{random.Next(0x1000000):X6}";
+                    <MudItem xs="12" sm="6" md="4" Style="post-item">
+                        <div class="card" style="background-color: @randomColor;">
+                            <div class="card-body">
+                                <h5>@post.Title</h5>
+                                <p>@post.Content.Substring(0, Math.Min(post.Content.Length, 100))...</p>
+                                <div class="card-actions">
+                                    <button class="btn-read" @onclick="() => HandlePostDetails(post.Id)">Читать далее</button>
+                                    <button class="btn-edit" @onclick="() => HandleEditPost(post.Id)">Редактировать</button>
+                                    <button class="btn-delete" @onclick="() => DeletePost(post.Id)">Удалить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </MudItem>
+                }
+            </MudGrid>
+        }
+    </MudPaper>
+</MudContainer>
+
+@code {
+    [Inject]
+    protected NavigationManager NavigationManager { get; set; }
+
+    private Random random = new Random();
+
+    private void HandlePostDetails(int id)
+    {
+        NavigationManager.NavigateTo($"postdetails/{id}");
+    }
+
+    private void HandleEditPost(int id)
+    {
+        NavigationManager.NavigateTo($"editpost/{id}");
+    }
+}

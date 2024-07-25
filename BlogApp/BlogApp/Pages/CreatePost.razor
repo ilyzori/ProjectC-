@@ -1,0 +1,53 @@
+﻿@page "/createpost"
+@inherits CreatePostBase
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h2 class="text-center">Создать новый пост</h2>
+        </div>
+        <div class="card-body">
+            <EditForm Model="newPost" OnValidSubmit="HandleValidSubmit">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <div class="form-group">
+                    <label for="title">Название</label>
+                    <InputText id="title" class="form-control" @bind-Value="newPost.Title" placeholder="Введите название" />
+                </div>
+                <div class="form-group">
+                    <label for="content">Содержание</label>
+                    <InputTextArea id="content" class="form-control" @bind-Value="newPost.Content" placeholder="Введите содержание" />
+                </div>
+                <button type="submit" class="btn btn-primary">Создать</button>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        margin: auto;
+        width: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        padding: 1rem;
+    }
+
+    .card-body {
+        padding: 2rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    input::placeholder, textarea::placeholder {
+        color: #6c757d;
+    }
+</style>

@@ -1,0 +1,120 @@
+﻿body {
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Красочный градиентный фон */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333; /* Темный цвет шрифта */
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.blog-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff; /* Белый цвет шрифта */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень для текста */
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #fff; /* Белый цвет текста */
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+    .card-actions .btn-read,
+    .card-actions .btn-edit,
+    .card-actions .btn-delete {
+        flex: 0 1 auto;
+        margin-right: 5px; /* Уменьшено расстояние между кнопками */
+    }
+
+.btn-read {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+}
+
+    .btn-read:hover {
+        background-color: #0056b3;
+    }
+
+.btn-edit {
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+}
+
+    .btn-edit:hover {
+        background-color: #e0a800;
+    }
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+}
+
+    .btn-delete:hover {
+        background-color: #c82333;
+    }
+
+.btn-create {
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+    .btn-create:hover {
+        background-color: #218838;
+    }
+
+.mud-paper.blog-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.mud-grid.post-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+    .mud-grid.post-grid > .mud-item {
+        flex: 1 1 calc(33.333% - 1rem); /* Три карточки в ряд */
+    }
+
+.post-item {
+    margin-bottom: 1rem;
+}
